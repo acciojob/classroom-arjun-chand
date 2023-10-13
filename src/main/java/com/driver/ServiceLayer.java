@@ -1,10 +1,13 @@
 package com.driver;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.util.HashMap;
 import java.util.List;
 
 public class ServiceLayer {
-   RepositoryLayer repositoryLayerObj;
+   @Autowired
+    RepositoryLayer repositoryLayerObj;
    public void addStudent(Student student){
        repositoryLayerObj.addStudentToDb(student);
    }
