@@ -9,15 +9,15 @@ import java.util.List;
 @Service
 public class ServiceLayer {
    @Autowired
-    RepositoryLayer repositoryLayerObj;
+    StudentRepository repositoryLayerObj;
    public void addStudent(Student student){
-       repositoryLayerObj.addStudentToDb(student);
+       repositoryLayerObj.addStudent(student);
    }
    public void addTeacher(Teacher teacher){
-       repositoryLayerObj.addTeacherToDb(teacher);
+       repositoryLayerObj.addTeacher(teacher);
    }
    public void studentTeacherPair(String student, String teacher){
-       repositoryLayerObj.addStudentTeacherDb(student,teacher);
+       repositoryLayerObj.addStudentTeacherPair(student,teacher);
    }
    public Student getStudentByName(String name){
        return repositoryLayerObj.getStudentByName(name);
@@ -33,9 +33,9 @@ public class ServiceLayer {
     }
 
     public void deleteTeacherByName(String teacher){
-       repositoryLayerObj.deleteTeacherByName(teacher);
+       repositoryLayerObj.removeTeacher(teacher);
     }
     public void deleteAllTeachers(){
-       repositoryLayerObj.deleteAllTeachers();
+       repositoryLayerObj.removeAllTeacher();
     }
 }
